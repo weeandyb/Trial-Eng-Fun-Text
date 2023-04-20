@@ -46,14 +46,95 @@
       </colophon>
     </frontmatter>
 
-    <chapter xml:id="chapter-title">
-      <title>Chapter title</title>
-
-      <section xml:id="section-title">
-        <title>Section title</title>
-        <p>Hello</p>
+    <chapter xml:id="Mechanics">
+      <title>Mechanics</title>
+        <introduction>
+        <outcomes>
+          <introduction>
+            <p>
+              This chapter covers the first learning outcome. 
+            </p>
+          </introduction>
+          <dl>
+            <li>
+              <title>1.</title>
+              <p>
+               Demonstrate an understanding and apply the fundamentals of statics, dynamics and mechanical energy concepts.  
+              </p>
+            </li>
+          </dl>
+        </outcomes>
+        <p>
+          This learning outcome has a relative weighting of 50% of the course. The sections in the chapter correspond to the sub-learning outcomes in the Lecturers Guide.
+        </p>
+      </introduction>
+      
+        <section xml:id="Simple_Force_Systems">
+        <title>Solve simple force systems</title>
+        <outcomes>
+          <introduction>
+            <p>
+              This section covers learning outcome <alert>1.1</alert> Solve simple force systems.
+            </p>
+          </introduction>
+          <dl>
+            <li>
+              <title>1.1.1</title>
+              <p>
+                Introduction, engineering terms, SI Units, fundamental units, derived units, metric prefixes, conversions of units, gravity. Sources of errors in measurement.
+              </p>
+            </li>
+            <li>
+              <title>1.1.2</title>
+              <p>
+                Vector addition (Graphical and Mathematical) Resultant and equilibrant vectors.
+              </p>
+            </li>
+            <li>
+              <title>1.1.3</title>
+              <p>
+                Calculate the components of a force. 
+              </p>
+            </li>
+            <li>
+              <title>1.1.4</title>
+              <p>
+                Free body diagrams (coplanar, concurrent by Graphical and mathematical solutions. 
+              </p>
+            </li>
+            <li>
+              <title>1.1.5</title>
+              <p>
+                Define and calculate the moment of a force. 
+              </p>
+            </li>
+            <li>
+              <title>1.1.6</title>
+              <p>
+                Calculate the support reactions for simply supported and cantilever beams with UDL and point loads (co-planer).
+              </p>
+            </li>
+          </dl>
+        </outcomes>
+        <subsection xml:id="subsec-Intro">
+          <title>Introduction, engineering terms, SI Units, fundamental units, derived units, metric prefixes, conversions of units, gravity. Sources of errors in measurement.</title>
+          <subsubsection xml:id="subsubsec-Test">
+            <title>Units</title>
+            <p>
+            In engineering, we often try to answer questions such as <alert>How long?</alert>, <alert>How fast?</alert>, <alert>How hot?</alert> and many others. Answers to these questions require understanding physical quantities and a common basis of measurement involving a standardised unit system.
+           </p>
+           <p>
+            This course uses the metric system based on the <term>International System of Units</term> or <term>SI</term>, abbreviated from the French <term>Système International (d'unités)</term>. 
+            The system uses seven base units based on quantities assumed to be mutually independent.
+           </p> 
+          </subsubsection> 
+        </subsection>
       </section>
 
+      <section xml:id="Centroids">
+        <title>Calculate the positions of centroids and centres of gravity</title>
+  
+      </section>
     </chapter>
 
     <backmatter xml:id="backmatter">
