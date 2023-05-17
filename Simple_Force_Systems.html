@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Solve simple force systems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="DE4101 Engineering Fundamentals Textbook (Demo)">
+<meta property="book:author" content="Andrew Burkert">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Eng_Fun_Text.html"><span class="title">DE4101 Engineering Fundamentals Textbook (Demo):</span> <span class="subtitle">A Trial Version</span></a></h1>
+<p class="byline">Andrew Burkert</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="Mechanics.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="Mechanics.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="Centroids.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\R}{\mathbb R}
+
+
+ \newcommand{\kg}[1]{#1~\mathrm{kg} }
+
+\newcommand{\m}[1]{#1~\mathrm{m}}
+\newcommand{\km}[1]{#1~\mathrm{km}}
+\newcommand{\cm}[1]{#1~\mathrm{cm}}
+\newcommand{\mm}[1]{#1~\mathrm{mm}}
+
+\newcommand{\N}[1]{#1~\mathrm{N} }
+\newcommand{\kN}[1]{#1~\mathrm{kN} }
+\newcommand{\MN}[1]{#1~\mathrm{MN} }
+
+\newcommand{\Nm}[1]{#1~\mathrm{N}\!\cdot\!\mathrm{m} }
+\newcommand{\kNm}[1]{#1~\mathrm{kN}\!\cdot\!\mathrm{m} } 
+
+\newcommand{\Nperm}[1]{#1~\mathrm{N}/\mathrm{m} }
+\newcommand{\kgperkm}[1]{#1~\mathrm{kg}/\mathrm{km} }
+\newcommand{\Nsm}[1]{#1~\mathrm{N}/\mathrm{m}^2 }
+\newcommand{\kgsm}[1]{#1~\mathrm{kg}/\mathrm{m}^2 }
+\newcommand{\kgqm}[1]{#1~\mathrm{kg}/\mathrm{m}^3 }
+\newcommand{\Pa}[1]{#1~\mathrm{Pa} }
+\newcommand{\kPa}[1]{#1~\mathrm{kPa} }
+
+\newcommand{\acc}[1]{#1~\mathrm{m}/\mathrm{s}^2 }
+
+\newcommand{\Pa}[1]{#1~\mathrm{Pa}}
+\newcommand{\W}[1]{#1~\mathrm{W}}
+\newcommand{\J}[1]{#1~\mathrm{J}}
+\newcommand{\unit}[1]{#1~\mathrm{unit} }
+\newcommand{\ang}[1]{#1^\circ }
+\newcommand{\second}[1]{#1~\mathrm{s} }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">About this Book</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="Mechanics.html" class="internal"><span class="codenumber">1</span> <span class="title">Mechanics</span></a></div>
+<ul class="structural">
+<li class="active">
+<div class="toc-item"><a href="Simple_Force_Systems.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Solve simple force systems</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="Simple_Force_Systems.html#subsec-Intro" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Introduction, engineering terms, SI Units, fundamental units, derived units, metric prefixes, conversions of units, gravity. Sources of errors in measurement.</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Simple_Force_Systems.html#subsubsec-Units" class="internal"><span class="title">Units</span></a></div></li>
+<li><div class="toc-item"><a href="Simple_Force_Systems.html#subsubsec-Prefixes" class="internal"><span class="title">Metric Prefixes</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="Simple_Force_Systems.html#subsec-Vector_Addition" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Vector addition (Graphical and Mathematical) Resultant and equilibrant vectors.</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Simple_Force_Systems.html#subsubsec-Representing_Vectors" class="internal"><span class="title">Representing Vectors</span></a></div></li>
+<li><div class="toc-item"><a href="Simple_Force_Systems.html#exercises-1" class="internal"><span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="Centroids.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Calculate the positions of centroids and centres of gravity</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="Simple_Force_Systems"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Solve simple force systems</span>
+</h2>
+<article class="outcomes goal-like" id="outcomes-2"><h3 class="heading"><span class="type">Outcomes</span></h3>
+<div class="introduction" id="introduction-3"><div class="para" id="p-8">This section covers learning outcome <em class="alert">1.1</em> Solve simple force systems.</div></div>
+<dl class="description-list">
+<dt id="li-2">1.1.1</dt>
+<dd><div class="para" id="p-9">Introduction, engineering terms, SI Units, fundamental units, derived units, metric prefixes, conversions of units, gravity. Sources of errors in measurement.</div></dd>
+<dt id="li-3">1.1.2</dt>
+<dd><div class="para" id="p-10">Vector addition (Graphical and Mathematical) Resultant and equilibrant vectors.</div></dd>
+<dt id="li-4">1.1.3</dt>
+<dd><div class="para" id="p-11">Calculate the components of a force.</div></dd>
+<dt id="li-5">1.1.4</dt>
+<dd><div class="para" id="p-12">Free body diagrams (coplanar, concurrent by Graphical and mathematical solutions.</div></dd>
+<dt id="li-6">1.1.5</dt>
+<dd><div class="para" id="p-13">Define and calculate the moment of a force.</div></dd>
+<dt id="li-7">1.1.6</dt>
+<dd><div class="para" id="p-14">Calculate the support reactions for simply supported and cantilever beams with UDL and point loads (co-planer).</div></dd>
+</dl></article><section class="subsection" id="subsec-Intro"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">Introduction, engineering terms, SI Units, fundamental units, derived units, metric prefixes, conversions of units, gravity. Sources of errors in measurement.</span>
+</h3>
+<section class="subsubsection" id="subsubsec-Units"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Units</span>
+</h4>
+<div class="para" id="p-15">In engineering, we often try to answer questions such as <em class="alert">How long?</em>, <em class="alert">How fast?</em>, <em class="alert">How hot?</em> and many others. Answers to these questions require understanding physical quantities and a common basis of measurement involving a standardised unit system.</div>
+<div class="para" id="p-16">This course uses the metric system based on the <dfn class="terminology">International System of Units</dfn> or <dfn class="terminology">SI</dfn>, abbreviated from the French <dfn class="terminology">Système International (d'unités)</dfn>. The system uses seven base units based on quantities assumed to be mutually independent.<a href="" class="xref" data-knowl="./knowl/units_table.html" title="Table 1.1.1: S.I. Base Units">Table 1.1.1</a> shows the S.I. base units.</div>
+<figure class="table table-like" id="units_table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>S.I. Base Units</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b3 r0 l0 t0 lines">Quantity</td>
+<td class="l m b3 r0 l0 t0 lines">Unit</td>
+<td class="l m b3 r0 l0 t0 lines">Symbol</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">length or distance</td>
+<td class="l m b0 r0 l0 t0 lines">metre</td>
+<td class="l m b0 r0 l0 t0 lines">m</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">mass</td>
+<td class="l m b0 r0 l0 t0 lines">kilogram</td>
+<td class="l m b0 r0 l0 t0 lines">kg</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">time</td>
+<td class="l m b0 r0 l0 t0 lines">second</td>
+<td class="l m b0 r0 l0 t0 lines">s</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">electric current</td>
+<td class="l m b0 r0 l0 t0 lines">ampere (amp)</td>
+<td class="l m b0 r0 l0 t0 lines">A</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">temperature</td>
+<td class="l m b0 r0 l0 t0 lines">kelvin</td>
+<td class="l m b0 r0 l0 t0 lines">K</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">luminous intensity</td>
+<td class="l m b0 r0 l0 t0 lines">candela</td>
+<td class="l m b0 r0 l0 t0 lines">cd</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">amount of substance</td>
+<td class="l m b1 r0 l0 t0 lines">mole</td>
+<td class="l m b1 r0 l0 t0 lines">mol</td>
+</tr>
+</table></div></figure><div class="para" id="p-17">Although the base unit of temperature is the kelvin, the degree Celsius unit (°C) is usually used. One degree Celsius is equal in magnitude to one kelvin, but the scales start at different points. This is illustrated in <a href="" class="xref" data-knowl="./knowl/fig-temp-scales.html" title="Figure 1.1.2">Figure 1.1.2</a> below.</div>
+<div class="para" id="p-18"></div>
+<figure class="figure figure-like" id="fig-temp-scales"><iframe id="geogebra-temp-scales" width="600" height="600" src="geogebra-temp-scales-if.html"></iframe><div class="instructions">
+<a href="" data-knowl="" class="id-ref instructions-knowl original" data-refid="hk-instructions-1" id="instructions-1"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></a><div class="hidden-content tex2jax_ignore" id="hk-instructions-1"><div class="solution-like">
+<div class="para" id="p-19">The interactive shows the relationship between temperatures in kelvin (K) and degrees Celsius (°C).</div>
+<div class="para" id="p-20">You can convert temperatures from one unit to the other by dragging the appropriate slider or typing in either input box.</div>
+</div></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>Comparison of Kelvin and Celsius Scales</figcaption></figure><div class="para" id="p-21">All other quantities, called derived quantities, are defined in terms of the seven base quantities via a system of quantity equations. The main derived quantities used in the Engineering Fundamentals course are shown in <a href="" class="xref" data-knowl="./knowl/derived_units_table.html" title="Table 1.1.3: S.I. Derived Units Used in Engineering Fundamentals">Table 1.1.3</a> below.</div>
+<div class="para" id="p-22">Several quantities have special names and symbols. These may be included in other SI-derived units names and symbols.</div>
+<figure class="table table-like" id="derived_units_table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.3<span class="period">.</span></span><span class="space"> </span>S.I. Derived Units Used in Engineering Fundamentals</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b3 r0 l0 t0 lines">Quantity</td>
+<td class="l m b3 r0 l0 t0 lines">Unit</td>
+<td class="l m b3 r0 l0 t0 lines">Symbol</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">area</td>
+<td class="l m b0 r0 l0 t0 lines">square metre</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\text{m}^2\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">volume</td>
+<td class="l m b0 r0 l0 t0 lines">cubic metre</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\text{m}^3\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">velocity, speed</td>
+<td class="l m b0 r0 l0 t0 lines">metre per second</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\text{m}/\text{s}\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">acceleration</td>
+<td class="l m b0 r0 l0 t0 lines">metre per second per second</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\text{m}/\text{s}\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">momentum</td>
+<td class="l m b0 r0 l0 t0 lines">kilogram metre per second</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\text{kg}\cdot\text{m}/\text{s}\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">force, weight</td>
+<td class="l m b0 r0 l0 t0 lines">newton</td>
+<td class="l m b0 r0 l0 t0 lines">N</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">work, energy, heat</td>
+<td class="l m b0 r0 l0 t0 lines">joule</td>
+<td class="l m b0 r0 l0 t0 lines">J</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">power</td>
+<td class="l m b0 r0 l0 t0 lines">watt</td>
+<td class="l m b0 r0 l0 t0 lines">W</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">moment, torque</td>
+<td class="l m b0 r0 l0 t0 lines">newton-metre</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\text{N}\cdot\text{m}\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">pressure, stress</td>
+<td class="l m b0 r0 l0 t0 lines">pascal</td>
+<td class="l m b0 r0 l0 t0 lines">Pa</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">electric charge</td>
+<td class="l m b0 r0 l0 t0 lines">coulomb</td>
+<td class="l m b0 r0 l0 t0 lines">C</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">electric potential, voltage, EMF</td>
+<td class="l m b0 r0 l0 t0 lines">volt</td>
+<td class="l m b0 r0 l0 t0 lines">V</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">resistance, impedance</td>
+<td class="l m b0 r0 l0 t0 lines">ohm</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Omega\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">frequency</td>
+<td class="l m b0 r0 l0 t0 lines">hertz</td>
+<td class="l m b0 r0 l0 t0 lines">Hz</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">capacitance<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a>
+</td>
+<td class="l m b0 r0 l0 t0 lines">farad</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">inductance<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-2" id="fn-2"><sup> 2 </sup></a>
+</td>
+<td class="l m b0 r0 l0 t0 lines">henry</td>
+<td class="l m b0 r0 l0 t0 lines">H</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">density</td>
+<td class="l m b1 r0 l0 t0 lines">kilogram per cubic metre</td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\text{kg}/\text{m}^3\)</span></td>
+</tr>
+</table></div></figure><article class="warning remark-like" id="warning-1"><h5 class="heading">
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h5>
+<div class="para" id="p-23"></div> <div class="para" id="p-24">It is sometimes not clear how units with special names are derived units.</div> <div class="para" id="p-25">The derivation for some of the SI units with special names is shown below in <a href="" class="xref" data-knowl="./knowl/unit_derivation_table.html" title="Table 1.1.5: Derivation Of Some SI Units With Special Names">Table 1.1.5</a>.</div> <figure class="table table-like" id="unit_derivation_table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.5<span class="period">.</span></span><span class="space"> </span>Derivation Of Some SI Units With Special Names</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b3 r0 l0 t0 lines">Name (Symbol)</td>
+<td class="l m b3 r0 l0 t0 lines">Deriving Formula</td>
+<td class="l m b3 r0 l0 t0 lines">In Terms Of Other SI Units</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">newton (N)</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(F=m\cdot a\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1~\mathrm{N}=1~\mathrm{kg}\cdot\mathrm{m}/\mathrm{s}^2\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">pascal (Pa)</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(P=F/A\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1~\mathrm{Pa}=1~\mathrm{N}/\mathrm{m}^2\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">joule (J)</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(W=F\cdot s\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1~\mathrm{J}=1~\mathrm{N}\cdot\mathrm{m}\)</span></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">watt (W)</td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(P=W/t\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(1~\mathrm{W}=1~\mathrm{J}/\mathrm{s}\)</span></td>
+</tr>
+</table></div></figure> <div class="para" id="p-26"></div></article><div class="para" id="p-27">There are also some non-SI metric units in common use:</div>
+<div class="para" id="p-28">The <dfn class="terminology">hectare</dfn> (symbol: ha) is a non-SI metric unit of area equal to a square with 100-metre sides (<span class="process-math">\(1~\mathrm{hm}^2\)</span>), or <span class="process-math">\(10~000~\mathrm{m}^2\text{,}\)</span> and is primarily used in the measurement of land.</div>
+<div class="para logical" id="p-29"><div class="displaymath process-math">
+\begin{equation*}
+1~\mathrm{ha}=\m{10~000}^2 
+\end{equation*}
+</div></div>
+<div class="para" id="p-30">The <dfn class="terminology">tonne</dfn> (symbol: t) is a non-SI metric unit of mass equal to <span class="process-math">\(1~000~\text{kilograms}\text{.}\)</span>
+</div>
+<div class="para logical" id="p-31"><div class="displaymath process-math">
+\begin{equation*}
+1~\mathrm{t}=\kg{1~000}
+\end{equation*}
+</div></div>
+<div class="para" id="p-32">The <dfn class="terminology">litre</dfn> (symbol: L or l) is a non-SI metric unit of volume or capacity equal to <span class="process-math">\(1~000~\text{cubic centimetres}\text{,}\)</span> or <span class="process-math">\(0.001~\text{cubic metres}\text{.}\)</span>
+</div>
+<div class="para logical" id="p-33"><div class="displaymath process-math">
+\begin{equation*}
+\m{1}^3=1~000~\mathrm{L} 
+\end{equation*}
+</div></div></section><section class="subsubsection" id="subsubsec-Prefixes"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Metric Prefixes</span>
+</h4>
+<figure class="table table-like" id="prefixes_table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.6<span class="period">.</span></span><span class="space"> </span>S.I. Metric Prefixes</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b3 r0 l0 t0 lines">Factor</td>
+<td class="l m b3 r0 l0 t0 lines">Name</td>
+<td class="l m b3 r0 l0 t0 lines">Symbol</td>
+<td class="l m b3 r0 l0 t0 lines">Factor</td>
+<td class="l m b3 r0 l0 t0 lines">Name</td>
+<td class="l m b3 r0 l0 t0 lines">Symbol</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{24}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">yotta</td>
+<td class="l m b0 r0 l0 t0 lines">Y</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{-1}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">deci</td>
+<td class="l m b0 r0 l0 t0 lines">d</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{21}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">zeta</td>
+<td class="l m b0 r0 l0 t0 lines">Z</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{-2}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">centi</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{18}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">exa</td>
+<td class="l m b0 r0 l0 t0 lines">E</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{-3}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">milli</td>
+<td class="l m b0 r0 l0 t0 lines">m</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{15}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">peta</td>
+<td class="l m b0 r0 l0 t0 lines">P</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{-6}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">micro</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\mu\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{12}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">tera</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{-9}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">nano</td>
+<td class="l m b0 r0 l0 t0 lines">n</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{9}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">giga</td>
+<td class="l m b0 r0 l0 t0 lines">G</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{-12}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">pico</td>
+<td class="l m b0 r0 l0 t0 lines">p</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{6}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">mega</td>
+<td class="l m b0 r0 l0 t0 lines">M</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{-15}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">micro</td>
+<td class="l m b0 r0 l0 t0 lines">n</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{3}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">kilo</td>
+<td class="l m b0 r0 l0 t0 lines">k</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{-18}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">atto</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{2}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">hecto</td>
+<td class="l m b0 r0 l0 t0 lines">h</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10^{-21}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">zepto</td>
+<td class="l m b0 r0 l0 t0 lines">z</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(10^1\)</span></td>
+<td class="l m b1 r0 l0 t0 lines">deca</td>
+<td class="l m b1 r0 l0 t0 lines">da</td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(10^{-24}\)</span></td>
+<td class="l m b1 r0 l0 t0 lines">yocto</td>
+<td class="l m b1 r0 l0 t0 lines">y</td>
+</tr>
+</table></div></figure></section></section><section class="subsection" id="subsec-Vector_Addition"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.2</span> <span class="title">Vector addition (Graphical and Mathematical) Resultant and equilibrant vectors.</span>
+</h3>
+<div class="para" id="p-34">Quantities we measure in engineering can be divided into scalars and vectors.</div>
+<div class="para" id="p-35">A quantity with magnitude (size) but no particular direction is described as a <dfn class="terminology">scalar</dfn>. Scalars can be described by a positive or negative number or even zero. Scalar quantities follow the usual laws of algebra, and most scalar quantities have units. Scalar quantities include distance, area, volume, mass, density, pressure, temperature, energy, work, speed, time, and power. Scalar quantities change when their magnitude changes.</div>
+<div class="para" id="p-36">A quantity with magnitude that acts in a particular direction is described as a <dfn class="terminology">vector</dfn>. Calculations involving vectors must always consider the direction of each term and follow the rules of vector algebra. Vector quantities include displacement, velocity, acceleration, momentum, and force. Vector quantities change when: their magnitude changes, their direction changes or their magnitude and direction both change.</div>
+<section class="subsubsection" id="subsubsec-Representing_Vectors"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Representing Vectors</span>
+</h4>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:48%;">
+<div class="para" id="p-37">Vectors are represented by arrows. The arrow's length represents the vector's magnitude, the line's angle, and the way the arrowhead points indicates the direction.</div>
+<div class="para" id="p-38">The starting point of the vector is known as the <dfn class="terminology">tail</dfn>, and the endpoint is known as the <dfn class="terminology">head</dfn>. The tail also indicates the <dfn class="terminology">point of application</dfn> of the vector. The head and tail of a vector define its <dfn class="terminology">line of action</dfn>.</div>
+<div class="para" id="p-39">You may want to think of the line of action as an invisible string along which a vector can slide. Sliding a vector along its line of action does not change its magnitude or its direction, and can be useful when solving vector problems.</div>
+</div>
+<div class="sbspanel top" style="width:48%;"><figure class="figure figure-like" id="fig-vector"><iframe id="geogebra-vector" width="288" height="288" src="geogebra-vector-if.html"></iframe><div class="instructions">
+<a href="" data-knowl="" class="id-ref instructions-knowl original" data-refid="hk-instructions-2" id="instructions-2"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></a><div class="hidden-content tex2jax_ignore" id="hk-instructions-2"><div class="solution-like">
+<div class="para" id="p-40">The interactive shows a vector <span class="process-math">\(F\)</span> acting an an angle <span class="process-math">\(\theta\)</span> to the positive horizontal.</div>
+<div class="para" id="p-41">You can adjust the magnitude and direction of the vector with the dot at its head, and adjust the point of application by dragging the line of action and sliding the tail along it.</div>
+</div></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.7<span class="period">.</span></span><span class="space"> </span>Representation of a Vector <span class="process-math">\(F\)</span> <a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 3 </sup></a></figcaption></figure></div>
+</div></div>
+<div class="para logical" id="p-42">
+<div class="para">To draw a vector:</div>
+<ol class="decimal">
+<li id="li-8"><div class="para" id="p-derived-li-8">Decide on a point that will be your starting point.</div></li>
+<li id="li-9"><div class="para" id="p-derived-li-9">Pick a scale and determine the required length of the line.</div></li>
+<li id="li-10"><div class="para" id="p-derived-li-10">Determine the specified direction and draw the line.</div></li>
+<li id="li-11"><div class="para" id="p-derived-li-11">Add the arrowhead to indicate the direction.</div></li>
+</ol>
+</div>
+<article class="example example-like" id="example-1"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
+</h5>
+<div class="para" id="p-43">Draw a scale diagram to depict a force of <span class="process-math">\(\N{150}\)</span> pushing horizontally to the right.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original has-image" data-refid="hk-answer-1" id="answer-1"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><img src="external/Force_Vector_1.svg" role="img" class="contained"></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-interactive" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
+<div class="para logical" id="p-44"><ol class="decimal">
+<li id="li-12">
+<span class="heading"><span class="title">Decide on a point that will be your starting point..</span></span><div class="para" id="p-45">Pick a starting point, <span class="process-math">\(A\text{.}\)</span>
+</div>
+</li>
+<li id="li-13">
+<span class="heading"><span class="title">Pick a scale and determine the required length of the line.</span></span><div class="para" id="p-46">Let the scale be <span class="process-math">\(\mm{1} = \N{2}\text{,}\)</span> so the length of the arrow is <span class="process-math">\(150/2=\mm{75}\text{.}\)</span>
+</div>
+</li>
+<li id="li-14">
+<span class="heading"><span class="title">Determine the specified direction and draw the line.</span></span><div class="para" id="p-47">Draw a horizontal line through point <span class="process-math">\(A\text{.}\)</span> Locate point <span class="process-math">\(B\text{,}\)</span> <span class="process-math">\(\mm{75}\)</span> to the right of <span class="process-math">\(A\text{.}\)</span> Draw the vector from point <span class="process-math">\(A\)</span> to point <span class="process-math">\(B\text{.}\)</span>
+</div>
+</li>
+<li id="li-15">
+<span class="heading"><span class="title">Add the arrowhead to indicate the direction.</span></span><div class="para" id="p-48">Add the arrowhead to show the vector direction is to the right.</div>
+</li>
+</ol></div> <iframe id="geogebra-vector_1" width="600" height="360" src="geogebra-vector_1-if.html"></iframe><div class="instructions">
+<a href="" data-knowl="" class="id-ref instructions-knowl original" data-refid="hk-instructions-3" id="instructions-3"><h6 class="heading"><span class="type">Instructions<span class="period">.</span></span></h6></a><div class="hidden-content tex2jax_ignore" id="hk-instructions-3"><div class="solution-like">
+<div class="para" id="p-49">You can follow along with the solution on the diagram above by clicking the <span class="fas fa-fast-backward"></span> arrow to go to the start, then click the <span class="fas fa-forward"></span> arrow to step through the process.</div>
+<div class="para" id="p-50"></div>
+</div></div>
+</div>
+</div></div>
+</div></article><article class="example example-like" id="example-2"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
+</h5>
+<div class="para" id="p-51">Draw a scale diagram to depict a force of <span class="process-math">\(\kN{12.5}\)</span> pulling down to the left at an angle of 30° to the vertical.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original has-image" data-refid="hk-answer-2" id="answer-2"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/Force_Vector_2.svg" role="img" class="contained"></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-interactive" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
+<div class="para logical" id="p-52"><ol class="decimal">
+<li id="li-16">
+<span class="heading"><span class="title">Decide on a point that will be your starting point..</span></span><div class="para" id="p-53">Pick a starting point, <span class="process-math">\(A\text{.}\)</span>
+</div>
+</li>
+<li id="li-17">
+<span class="heading"><span class="title">Pick a scale and determine the required length of the line.</span></span><div class="para" id="p-54">Let the scale be <span class="process-math">\(\mm{10} = \kN{1}\text{,}\)</span> so the length of the arrow is <span class="process-math">\(12.5\times10=\mm{125}\text{.}\)</span>
+</div>
+</li>
+<li id="li-18">
+<span class="heading"><span class="title">Determine the specified direction and draw the line.</span></span><div class="para" id="p-55">Draw a line through point <span class="process-math">\(A\)</span> down to the left at an angle of 30° to the vertical. Locate point <span class="process-math">\(B\text{,}\)</span> <span class="process-math">\(\mm{125}\)</span> along the line from <span class="process-math">\(A\text{.}\)</span> Draw the vector from point <span class="process-math">\(A\)</span> to point <span class="process-math">\(B\text{.}\)</span>
+</div>
+</li>
+<li id="li-19">
+<span class="heading"><span class="title">Add the arrowhead to indicate the direction.</span></span><div class="para" id="p-56">Add the arrowhead to show the vector direction is down and to the left.</div>
+</li>
+</ol></div> <iframe id="geogebra-vector_2" width="600" height="720" src="geogebra-vector_2-if.html"></iframe><div class="instructions">
+<a href="" data-knowl="" class="id-ref instructions-knowl original" data-refid="hk-instructions-4" id="instructions-4"><h6 class="heading"><span class="type">Instructions<span class="period">.</span></span></h6></a><div class="hidden-content tex2jax_ignore" id="hk-instructions-4"><div class="solution-like">
+<div class="para" id="p-57">You can follow along with the solution on the diagram above by clicking the <span class="fas fa-fast-backward"></span> arrow to go to the start, then click the <span class="fas fa-forward"></span> arrow to step through the process.</div>
+<div class="para" id="p-58"></div>
+</div></div>
+</div>
+</div></div>
+</div></article></section><section class="exercises" id="exercises-1"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h4>
+<iframe src="external//exam-170277-chapter-1-exercises" id="numbas-chapter-1" width="600" height="2400"></iframe></section></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn">used in DE4401 Electrical Principles and DE5304 Electrical Fundamentals</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn">used in DE4401 Electrical Principles and DE5304 Electrical Fundamentals</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn">Figure copied from Figure 2.1.1 in <span class="booktitle">Engineering Statics: Open and Interactive</span>, <a class="external" href="https://engineeringstatics.org" target="_blank"><code class="code-inline tex2jax_ignore">https://engineeringstatics.org</code></a>
+</div></div>
+</div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="Mechanics.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="Centroids.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

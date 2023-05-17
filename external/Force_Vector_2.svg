@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="66.4104mm" height="112.183mm"
+ viewBox="115 30 251 424"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<title>FX Draw</title>
+<desc>Efofex Encoded SVG</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="none" stroke="#ff0000" stroke-opacity="1" stroke-width="1.33333" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Efofex" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="359.055,37.7953 122.835,446.941 " />
+</g>
+
+<g fill="#ff0000" fill-opacity="1" stroke="#ff0000" stroke-opacity="1" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Efofex" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M123.717,438.213 L122.835,446.941 L129.952,441.813 L124.835,443.477 L123.717,438.213"/>
+</g>
+
+<g fill="#ff0000" fill-opacity="1" stroke="#ff0000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Calibri" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ff0000" fill-opacity="1" stroke="#ff0000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,-0.866025,0.866025,0.5,256,251)"
+font-family="Calibri" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ff0000" fill-opacity="1" stroke="#ff0000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.5,-0.866025,0.866025,0.5,256,251)"
+font-family="Calibri" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#ff0000" fill-opacity="1" stroke="none" xml:space="preserve" x="-24.7813" y="5.46875" font-family="Calibri" font-size="16" font-weight="400" font-style="normal" 
+ >12.5 kN</text>
+</g>
+
+<g fill="#ff0000" fill-opacity="1" stroke="#ff0000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Calibri" font-size="16" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-dasharray="1.33333,2.66667" stroke-dashoffset="0" stroke-width="1.33333" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Efofex" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="359.055,37.7953 359.055,188.976 " />
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Calibri" font-size="13.3333" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,337,118)"
+font-family="Calibri" font-size="13.3333" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-8.76563" y="4.45313" font-family="Calibri" font-size="13.3333" font-weight="400" font-style="normal" 
+ >30°</text>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Calibri" font-size="13.3333" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1.33333" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Calibri" font-size="13.3333" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="325.039,96.7123 325.266,96.8427 325.494,96.9723 325.722,97.101 325.95,97.2289 326.179,97.3558 326.409,97.4819 326.639,97.6071 326.869,97.7314 327.1,97.8548 327.331,97.9773 327.563,98.099 327.795,98.2197 328.028,98.3396 328.261,98.4585 328.495,98.5766 328.729,98.6937 328.964,98.81 329.199,98.9253 329.434,99.0397 329.67,99.1533 329.906,99.2659 330.143,99.3776 330.38,99.4884 330.618,99.5983 330.856,99.7073 331.095,99.8153 331.333,99.9225 331.573,100.029 331.812,100.134 332.052,100.238 332.293,100.342 332.534,100.444 332.775,100.546 333.017,100.647 333.259,100.746 333.501,100.845 333.744,100.943 333.987,101.04 334.231,101.136 334.475,101.231 334.719,101.325 334.964,101.418 335.209,101.511 335.454,101.602 335.7,101.692 335.946,101.782 336.192,101.87 336.439,101.958 336.686,102.044 336.934,102.13 337.181,102.214 337.429,102.298 337.678,102.381 337.926,102.463 338.175,102.543 338.425,102.623 338.674,102.702 338.924,102.78 339.174,102.857 339.425,102.933 339.676,103.008 339.927,103.082 340.178,103.155 340.43,103.228 340.682,103.299 340.934,103.369 341.187,103.438 341.439,103.507 341.692,103.574 341.946,103.64 342.199,103.706 342.453,103.77 342.707,103.833 342.961,103.896 343.216,103.957 343.47,104.018 343.725,104.077 343.98,104.136 344.236,104.193 344.491,104.25 344.747,104.305 345.003,104.36 345.26,104.413 345.516,104.466 345.773,104.518 346.03,104.568 346.287,104.618 346.544,104.666 346.801,104.714 347.059,104.761 347.317,104.806 347.575,104.851 347.833,104.895 348.091,104.937 348.35,104.979 348.608,105.02 348.867,105.06 349.126,105.098 349.385,105.136 349.644,105.173 349.903,105.208 350.163,105.243 350.423,105.277 350.682,105.31 350.942,105.341 351.202,105.372 351.462,105.402 351.723,105.43 351.983,105.458 352.243,105.485 352.504,105.511 352.764,105.535 353.025,105.559 353.286,105.582 353.547,105.603 353.808,105.624 354.069,105.644 354.33,105.662 354.591,105.68 354.853,105.697 355.114,105.713 355.375,105.727 355.637,105.741 355.898,105.753 356.16,105.765 356.421,105.776 356.683,105.785 356.945,105.794 357.206,105.802 357.468,105.808 357.73,105.814 357.991,105.818 358.253,105.822 358.515,105.825 358.777,105.826 359.039,105.827 359.055,105.827 " />
+</g>
+</g>
+</svg>
